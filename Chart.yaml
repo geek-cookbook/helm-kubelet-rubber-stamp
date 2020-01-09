@@ -1,6 +1,7 @@
 apiVersion: v2
 name: kubelet-rubber-stamp
 description: A Helm chart for Kubelet Rubber Stamp
+icon: https://flexkube.github.io/assets/logo.png
 
 # A chart can be either an 'application' or a 'library' chart.
 #
