@@ -22,7 +22,7 @@ spec:
       priorityClassName: system-cluster-critical
       containers:
         - name: kubelet-rubber-stamp
-          image: quay.io/kontena/kubelet-rubber-stamp-amd64:latest
+          image: quay.io/kontena/kubelet-rubber-stamp-amd64:{{ .Chart.AppVersion }}
           imagePullPolicy: IfNotPresent
           env:
             - name: WATCH_NAMESPACE
