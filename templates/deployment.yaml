@@ -21,15 +21,18 @@ spec:
       serviceAccountName: kubelet-rubber-stamp
       priorityClassName: system-cluster-critical
       containers:
-        - name: kubelet-rubber-stamp
-          image: {{ .Values.image | default (printf "quay.io/kontena/kubelet-rubber-stamp-amd64:%s" .Chart.AppVersion) }}
-          imagePullPolicy: IfNotPresent
-          env:
-            - name: WATCH_NAMESPACE
-              value: ""
-            - name: POD_NAME
-              valueFrom:
-                fieldRef:
-                  fieldPath: metadata.name
-            - name: OPERATOR_NAME
-              value: "kubelet-rubber-stamp"
+      - name: kubelet-rubber-stamp
+        image: {{ .Values.image | default (printf "quay.io/kontena/kubelet-rubber-stamp-amd64:%s" .Chart.AppVersion) }}
+        imagePullPolicy: IfNotPresent
+        env:
+        - name: WATCH_NAMESPACE
+          value: ""
+        - name: POD_NAME
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.name
+        - name: OPERATOR_NAME
+          value: "kubelet-rubber-stamp"
+        resources:
+          requests:
+            memory: 10Mi
