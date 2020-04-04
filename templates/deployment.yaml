@@ -12,17 +12,18 @@ spec:
       labels:
         name: kubelet-rubber-stamp
     spec:
+      serviceAccountName: kubelet-rubber-stamp
+      tolerations:
+      - effect: NoSchedule
+        operator: Exists
       nodeSelector:
         node-role.kubernetes.io/master: ""
-      tolerations:
-      - key: node-role.kubernetes.io/master
-        operator: Exists
-        effect: NoSchedule
-      serviceAccountName: kubelet-rubber-stamp
       priorityClassName: system-cluster-critical
       containers:
       - name: kubelet-rubber-stamp
         image: {{ .Values.image | default (printf "quay.io/kontena/kubelet-rubber-stamp-amd64:%s" .Chart.AppVersion) }}
+        args:
+        - "--v=2"
         imagePullPolicy: IfNotPresent
         env:
         - name: WATCH_NAMESPACE
