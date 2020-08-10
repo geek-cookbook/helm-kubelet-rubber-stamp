@@ -1,0 +1,15 @@
+apiVersion: v1
+entries:
+  kubelet-rubber-stamp:
+  - apiVersion: v2
+    appVersion: 0.3.1
+    created: "2020-08-10T01:23:30.893818903Z"
+    description: A Helm chart for Kubelet Rubber Stamp
+    digest: 1c274df4517a56625f439d4aa6455101e9b7e8deeed79c086fb117a3ea1bdecf
+    icon: https://flexkube.github.io/assets/logo.png
+    name: kubelet-rubber-stamp
+    type: application
+    urls:
+    - https://github.com/geek-cookbook/helm-kubelet-rubber-stamp/releases/download/kubelet-rubber-stamp-0.1.4/kubelet-rubber-stamp-0.1.4.tgz
+    version: 0.1.4
+generated: "2020-08-10T01:23:30.80024039Z"
