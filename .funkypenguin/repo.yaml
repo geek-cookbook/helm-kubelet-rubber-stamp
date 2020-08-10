@@ -1,0 +1,11 @@
+name: docker-mailserver
+
+readme:
+  template: chart
+  update: true
+  sections:
+    - title: What is this?
+      body: |
+        This is a helm chart for deploying kubelet-rubber-stamp.
+        It's forked from https://github.com/flexkube/kubelet-rubber-stamp-helm-chart, 
+        and includes a [fix](https://github.com/alex1989hu/kubelet-rubber-stamp/commit/1863de13c6535e1b18bb2557267bf2cd46b2fae5) for Kubernetes 1.18 compatibility
